@@ -1,4 +1,5 @@
 import numpy as np
+
 from hwk07_p1_soln import project
 
 # NOTE: you do NOT need to rewrite the `project` function 

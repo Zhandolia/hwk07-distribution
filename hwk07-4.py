@@ -1,13 +1,14 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import sys
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # use '.' below for the current working directory
 # else replace '.' with the path to the folder where your files are
 sys.path.append('.')
 from Homework07 import HouseBallAnimation
 from hwk07_p2_soln import houseTransform2
-from hwk07_p4_soln import project, moveTo, rotate, ballTransform4
+from hwk07_p4_soln import ballTransform4, moveTo, project, rotate
 
 obj = HouseBallAnimation(show_axes = True)
 anim = obj.animate(ballTransform4, houseTransform2)

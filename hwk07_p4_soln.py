@@ -1,5 +1,6 @@
 import numpy as np
-from hwk07_p3_soln import project, rotate, moveTo
+
+from hwk07_p3_soln import moveTo, project, rotate
 
 # NOTE: you do NOT need to rewrite the `project`, `rotate`, or `moveTo` functions 
 # as they are imported above

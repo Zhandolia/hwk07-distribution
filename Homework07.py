@@ -5,6 +5,19 @@ import numpy as np
 
 class HouseBallAnimation:
 
+    def project(d):
+        """
+        Returns the projection matrix for perspective projection.
+        The camera is located at (0, 0, d) looking towards the origin.
+        """
+        P = np.array([
+            [1, 0, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, -1/d],
+            [0, 0, 0, 1]
+        ])
+        return P
+
     def obj2flist(self, fp):
         """
         reads a standard .obj file as used in solid modeling.

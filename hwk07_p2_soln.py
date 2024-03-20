@@ -19,7 +19,20 @@ def rotate(x, y, z):
     when looking along the axis of rotation 
     from the positive direction toward the origin.  
     """
-    return np.eye(4)
+    # return np.eye(4)
+    Rx = np.array([[1, 0, 0, 0],
+                   [0, np.cos(x), -np.sin(x), 0],
+                   [0, np.sin(x),  np.cos(x), 0],
+                   [0, 0, 0, 1]])
+    Ry = np.array([[np.cos(y), 0, np.sin(y), 0],
+                   [0, 1, 0, 0],
+                   [-np.sin(y), 0, np.cos(y), 0],
+                   [0, 0, 0, 1]])
+    Rz = np.array([[np.cos(z), -np.sin(z), 0, 0],
+                   [np.sin(z),  np.cos(z), 0, 0],
+                   [0, 0, 1, 0],
+                   [0, 0, 0, 1]])
+    return Rz @ Ry @ Rx
 
 def houseTransform2(i, loc):
     """
@@ -28,4 +41,6 @@ def houseTransform2(i, loc):
     The appropriate transformation depends on the
     timestep which is given by 'i'.
     """
-    return np.eye(4)
+    # return np.eye(4)
+    angle = (i / 150.0) * 2 * np.pi * 2 
+    return rotate(0, angle, 0) @ project(100)

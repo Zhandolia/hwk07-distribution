@@ -12,4 +12,7 @@ def ballTransform4(i, loc):
     The appropriate transformation depends on the
     timestep which is given by 'i'.
     """
-    return np.eye(4)
+    # return np.eye(4)
+    translation = moveTo(np.array([0, 0, 0]), np.array([i * (20/150.0), 0, 0]))  # Move 20 units over 150 frames
+    rotation = rotate(0, 0, (i / 150.0) * 2 * np.pi)  # One full rotation over 150 frames
+    return translation @ rotation

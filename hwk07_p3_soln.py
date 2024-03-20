@@ -11,7 +11,14 @@ def moveTo(start, end):
     from position 'start' to position 'end.'
     positions are given in 3D homogeneous coordinates.
     """
-    return np.eye(4)
+    # return np.eye(4)
+    dx, dy, dz = end - start
+    return np.array([
+        [1, 0, 0, dx],
+        [0, 1, 0, dy],
+        [0, 0, 1, dz],
+        [0, 0, 0, 1]
+    ])
 
 def ballTransform3(i, loc):
     """

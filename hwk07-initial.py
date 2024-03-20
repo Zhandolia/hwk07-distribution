@@ -1,8 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import sys
+
+import matplotlib.pyplot as plt
+import numpy as np
+
 sys.path.append('.')  # or wherever you have placed Homework07.py
 from Homework07 import HouseBallAnimation
+
 
 def houseTransform0(i, loc):
     """

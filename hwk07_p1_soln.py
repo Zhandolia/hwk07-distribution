@@ -14,7 +14,7 @@ def project(d):
         [0, 0, 1, 0],
     ])
     # return(np.eye(4))
-    return
+    return P
 
 def houseTransform1(i, loc):
     """

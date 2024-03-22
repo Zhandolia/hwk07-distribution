@@ -12,13 +12,12 @@ def moveTo(start, end):
     positions are given in 3D homogeneous coordinates.
     """
     # return np.eye(4)
-    dx, dy, dz = end - start
-    return np.array([
-        [1, 0, 0, dx],
-        [0, 1, 0, dy],
-        [0, 0, 1, dz],
+    return np.array([[
+        [1, 0, 0, end[0] - start[0]],
+        [0, 1, 0, end[1] - start[1]],
+        [0, 0, 1, end[2] - start[2]],
         [0, 0, 0, 1]
-    ])
+    ]])
 
 def ballTransform3(i, loc):
     """
@@ -27,4 +26,8 @@ def ballTransform3(i, loc):
     The appropriate transformation depends on the
     timestep which is given by 'i'.
     """
-    return np.eye(4)
+    # return np.eye(4)
+    P = project(100.0)
+    finalSet = np.array([20, 0, 0, 1])
+    T = moveTo(loc, loc + (i/150) * finalSet)
+    return P @ T

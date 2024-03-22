@@ -42,5 +42,7 @@ def houseTransform2(i, loc):
     timestep which is given by 'i'.
     """
     # return np.eye(4)
-    angle = (i / 150.0) * 2 * np.pi * 2 
-    return rotate(0, angle, 0) @ project(100)
+    angle = (i / 150.0) * 2 * np.pi * 2  # Two full rotations over 150 steps
+    rotation_matrix = rotate(0, angle, 0)
+    projection_matrix = project(100)  # Assuming d=100 for projection
+    return np.dot(projection_matrix, rotation_matrix)

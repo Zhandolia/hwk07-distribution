@@ -7,14 +7,13 @@ def project(d):
     viewpoint at (0, 0, d)
     and the viewing plane at z = 0 (the xy plane).
     """
-    P = np.array([
+    # return(np.eye(4))
+    return np.array([
         [1, 0, 0, 0],
         [0, 1, 0, 0],
-        [0, 0, 1, -1/d],
-        [0, 0, 1, 0],
+        [0, 0, 0, 0],
+        [0, 0, -1/d, 1],
     ])
-    # return(np.eye(4))
-    return P
 
 def houseTransform1(i, loc):
     """

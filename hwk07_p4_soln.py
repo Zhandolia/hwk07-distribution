@@ -15,7 +15,7 @@ def ballTransform4(i, loc):
     # return np.eye(4)
     P = project(100.0)
     M = moveTo(loc, np.zeros[4])
-    R = rotate(0, 0, -2.0 * np.pi * (i/150))
+    R = rotate(0, 0, -2.0*np.pi*(i/150))
     finalSet = np.array([20, 0, 0, 1])
     T = moveTo(np.zeros(4), loc + (i/150) * finalSet)
     return P @ T @ R @ M

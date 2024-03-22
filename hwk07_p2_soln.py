@@ -61,6 +61,5 @@ def houseTransform2(i, loc):
     # return np.eye(4)
     # return(project(100) @ rotate(0, (i * 4 * np.pi)/150, 0))
     P = project(100.0)
-    M = rotate(0, 2.0 * np.pi * (i/150), 0)
+    M = rotate(0, 2.0*np.pi*(i/150), 0)
     return P @ M
-    

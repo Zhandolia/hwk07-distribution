@@ -19,4 +19,7 @@ def ballTransform4(i, loc):
     finalSet = np.array([20, 0, 0, 1])
     T = moveTo(np.zeros(4), loc + (i/150) * finalSet)
     return P @ T @ R @ M
+    # s = (i * 2 * np.pi)/150
+    # t = -20 * i/150
+    # return project(100) @ moveTo([0, 0, 0, 1], loc) @ moveTo([0, 0, 0, 1]) @ rotate(0, 0, y) @ moveTo(loc, [0, 0, 0, 1])
     
